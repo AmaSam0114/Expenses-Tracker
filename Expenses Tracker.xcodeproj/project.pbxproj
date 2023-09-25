@@ -35,8 +35,13 @@
 		1B2B37782AC16A8A0039A0EA /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1B2B37772AC16A8A0039A0EA /* FirebaseRemoteConfigSwift */; };
 		1B2B377A2AC16A8A0039A0EA /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1B2B37792AC16A8A0039A0EA /* FirebaseStorage */; };
 		1B2B377C2AC16A8A0039A0EA /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 1B2B377B2AC16A8A0039A0EA /* FirebaseStorageCombine-Community */; };
+		1B2B37802AC177BB0039A0EA /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2B377F2AC177BB0039A0EA /* TabBarView.swift */; };
+		1B2B37822AC1A4A90039A0EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2B37812AC1A4A90039A0EA /* ContentView.swift */; };
+		1B2B37842AC1AD3D0039A0EA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2B37832AC1AD3D0039A0EA /* HomeView.swift */; };
+		1B2B37872AC1B01F0039A0EA /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2B37862AC1B01F0039A0EA /* AddExpenseView.swift */; };
+		1B2B37892AC1B0940039A0EA /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2B37882AC1B0940039A0EA /* ReportView.swift */; };
 		1B60BC122AB07D8C001D97A3 /* Expenses_TrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B60BC112AB07D8C001D97A3 /* Expenses_TrackerApp.swift */; };
-		1B60BC142AB07D8C001D97A3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B60BC132AB07D8C001D97A3 /* ContentView.swift */; };
+		1B60BC142AB07D8C001D97A3 /* LoginSignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B60BC132AB07D8C001D97A3 /* LoginSignUpView.swift */; };
 		1B60BC162AB07D8E001D97A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B60BC152AB07D8E001D97A3 /* Assets.xcassets */; };
 		1B60BC192AB07D8E001D97A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B60BC182AB07D8E001D97A3 /* Preview Assets.xcassets */; };
 		1B60BC232AB07D8E001D97A3 /* Expenses_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B60BC222AB07D8E001D97A3 /* Expenses_TrackerTests.swift */; };
@@ -63,9 +68,14 @@
 
 /* Begin PBXFileReference section */
 		1B2B37442AC169EA0039A0EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1B2B377F2AC177BB0039A0EA /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		1B2B37812AC1A4A90039A0EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1B2B37832AC1AD3D0039A0EA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		1B2B37862AC1B01F0039A0EA /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
+		1B2B37882AC1B0940039A0EA /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
 		1B60BC0E2AB07D8C001D97A3 /* Expenses Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Expenses Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B60BC112AB07D8C001D97A3 /* Expenses_TrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expenses_TrackerApp.swift; sourceTree = "<group>"; };
-		1B60BC132AB07D8C001D97A3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1B60BC132AB07D8C001D97A3 /* LoginSignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginSignUpView.swift; sourceTree = "<group>"; };
 		1B60BC152AB07D8E001D97A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B60BC182AB07D8E001D97A3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1B60BC1E2AB07D8E001D97A3 /* Expenses TrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Expenses TrackerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,6 +137,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B2B37852AC1AE760039A0EA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1B2B377F2AC177BB0039A0EA /* TabBarView.swift */,
+				1B2B37832AC1AD3D0039A0EA /* HomeView.swift */,
+				1B60BC132AB07D8C001D97A3 /* LoginSignUpView.swift */,
+				1B2B37862AC1B01F0039A0EA /* AddExpenseView.swift */,
+				1B2B37882AC1B0940039A0EA /* ReportView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		1B60BC052AB07D8C001D97A3 = {
 			isa = PBXGroup;
 			children = (
@@ -150,11 +172,12 @@
 		1B60BC102AB07D8C001D97A3 /* Expenses Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				1B2B37852AC1AE760039A0EA /* Views */,
 				1B60BC112AB07D8C001D97A3 /* Expenses_TrackerApp.swift */,
-				1B60BC132AB07D8C001D97A3 /* ContentView.swift */,
 				1B2B37442AC169EA0039A0EA /* GoogleService-Info.plist */,
 				1B60BC152AB07D8E001D97A3 /* Assets.xcassets */,
 				1B60BC172AB07D8E001D97A3 /* Preview Content */,
+				1B2B37812AC1A4A90039A0EA /* ContentView.swift */,
 			);
 			path = "Expenses Tracker";
 			sourceTree = "<group>";
@@ -347,7 +370,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B60BC142AB07D8C001D97A3 /* ContentView.swift in Sources */,
+				1B60BC142AB07D8C001D97A3 /* LoginSignUpView.swift in Sources */,
+				1B2B37802AC177BB0039A0EA /* TabBarView.swift in Sources */,
+				1B2B37822AC1A4A90039A0EA /* ContentView.swift in Sources */,
+				1B2B37872AC1B01F0039A0EA /* AddExpenseView.swift in Sources */,
+				1B2B37892AC1B0940039A0EA /* ReportView.swift in Sources */,
+				1B2B37842AC1AD3D0039A0EA /* HomeView.swift in Sources */,
 				1B60BC122AB07D8C001D97A3 /* Expenses_TrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
