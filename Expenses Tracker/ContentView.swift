@@ -2,10 +2,11 @@
 //  ContentView.swift
 //  Expenses Tracker
 //
-//  Created by Ama Samaraweera on 2023-09-12.
+//  Created by Viraj Fernando on 2023-09-12.
 //
 
 import SwiftUI
+import Firebase
 
 struct ContentView: View {
     var body: some View {
@@ -22,21 +23,57 @@ struct ContentView_Previews: PreviewProvider {
 struct Home : View{
     
     @State var show = false
+    @State var status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
     
     var body: some View{
         NavigationView{
-            ZStack{
-                NavigationLink(destination: SignUp(show: self.$show), isActive: self.$show)
-                {
-                    Text("")
+            VStack{
+                if self.status{
+                    HomeScreen()
                 }
-                .hidden()
-                Login(show: self.$show)
-                
+                else{
+                    ZStack{
+                        NavigationLink(destination: SignUp(show: self.$show), isActive: self.$show)
+                        {
+                            Text("")
+                        }
+                        .hidden()
+                        Login(show: self.$show)
+                        
+                    }
+                }
             }
             .navigationBarTitle("")
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
+            .onAppear{
+                NotificationCenter.default.addObserver(forName: NSNotification.Name("status"), object: nil, queue: .main){(_) in
+                    self.status = UserDefaults.standard.value(forKey: "status") as? Bool ?? false
+                }
+            }
+        }
+    }
+}
+
+struct HomeScreen : View {
+    
+    var body: some View{
+        VStack{
+            Text("Logged Successfully")
+                .font(.title)
+                .fontWeight(.bold)
+                .foregroundColor(Color.black.opacity(0.7))
+            Button(action:{
+                try! Auth.auth().signOut()
+                UserDefaults.standard.set(false, forKey: "status")
+                NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
+            }){
+                Text("Logout")
+                    .foregroundColor(.white)
+                    .padding(.vertical)
+                    .frame(width: UIScreen.main.bounds.width - 50)
+                
+            }
         }
     }
 }
@@ -144,8 +181,19 @@ struct Login : View {
         }
     func verify(){
         if self.email != "" && self.pass != "" {
+            Auth.auth().signIn(withEmail: self.email, password: self.pass ){(res,err) in
+                if err != nil{
+                    self.error = err!.localizedDescription
+                    self.alert.toggle()
+                    return
+                }
+                print("Success")
+                UserDefaults.standard.set(true,forKey: "status")
+                NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
+            }
             
-        }else{
+        }
+        else{
             self.error = "Please fill all the contents properly"
             self.alert.toggle()
         }
@@ -160,13 +208,17 @@ struct SignUp : View {
     @State var visible = false
     @State var revisible = false
     @Binding var show : Bool
+    @State var alert = false
+    @State var error = ""
     
     var body: some View{
+        ZStack{
         ZStack(alignment: .topLeading){
             GeometryReader{_ in
                 VStack{
                     
-                    Image("exp")
+                    Image("exp1")
+                        .resizable()
                     Text("SignUp")
                         .font(.title)
                         .fontWeight(.bold)
@@ -227,6 +279,7 @@ struct SignUp : View {
                     .padding(.top,20)
                     
                     Button(action:{
+                        self.register()
                         
                     }){
                         Text("SignUp")
@@ -263,12 +316,42 @@ struct SignUp : View {
                     .foregroundColor(Color("Color"))
             }
             .padding()
+        }
+            if self.alert{
+                ErrorView(alert: self.$alert, error: self.$error)
             }
-       
+    }
         .navigationBarBackButtonHidden(true)
         }
     
+    func register(){
+        if self.email != ""{
+            if self.pass == self.repass{
+                Auth.auth().createUser(withEmail: self.email, password: self.pass){ (res,err) in
+                    if err != nil {
+                        self.error = err!.localizedDescription
+                        self.alert.toggle()
+                        return
+                    }
+                    print("Success")
+                    UserDefaults.standard.setValue(true, forKey: "status")
+                    NotificationCenter.default.post(name: NSNotification.Name("status"), object: nil)
+                }
+                
+            }else{
+                self.error = "Password Mismatch"
+                self.alert.toggle()
+            }
+        }
+        else {
+            self.error = "Plsase fill all the content properly"
+            self.alert.toggle()
+        }
+    }
+    
 }
+
+
 struct ErrorView : View {
     
     @State var color = Color.black.opacity(0.7)
@@ -316,3 +399,6 @@ struct ErrorView : View {
         .background(Color.black.opacity(0.35).edgesIgnoringSafeArea(.all))
     }
 }
+
+
+
