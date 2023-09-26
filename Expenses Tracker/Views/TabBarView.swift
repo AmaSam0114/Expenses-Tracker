@@ -25,6 +25,10 @@ struct TabHome: View {
     init() {
         UITabBar.appearance().isHidden = true
     }
+    //Location for each Curve
+    @State var xAxis: CGFloat = 0
+    
+    @Namespace var animation
     
     var body: some View{
         
@@ -36,7 +40,7 @@ struct TabHome: View {
                 AddExpenseView()
                     .ignoresSafeArea(.all,edges: .all)
                     .tag("add")
-                Color.purple
+                ExpenseTrackView()
                     .ignoresSafeArea(.all,edges: .all)
                     .tag("expen")
                 ReportView()
@@ -46,29 +50,46 @@ struct TabHome: View {
             //custom TabBar
             HStack{
                 ForEach(tabs,id: \.self){ image in
-                    Button(action: {
-                        
-                        withAnimation(.spring()){
-                            seletedtab = image
-                        }
-                        
-                    }, label: {
-                        Image(image)
-                            .resizable()
-                            .renderingMode(.template)
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 25,height: 25)
-                            .foregroundColor(seletedtab == image ? getColor(image: image): Color.gray)
-                    })
+                 
+                    GeometryReader {reader in
+                        Button(action: {
+                            
+                            withAnimation(.spring()){
+                                seletedtab = image
+                                xAxis = reader.frame(in: .global).minX
+                            }
+                            
+                        }, label: {
+                            Image(image)
+                                .resizable()
+                                .renderingMode(.template)
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 25,height: 25)
+                                .foregroundColor(seletedtab == image ? getColor(image: image): Color.gray)
+                                .padding(seletedtab == image ? 15:0)
+                                .background(Color("Lblue").opacity(seletedtab == image ? 1:0).clipShape(Circle()))
+                                .matchedGeometryEffect(id: image , in: animation)
+                                .offset(x:seletedtab == image ? (reader.frame(in: .global).minX - reader.frame(in: .global).midX): 0,y: seletedtab == image ? -45:0)
+                        })
+                        .onAppear(perform: {
+                            if image == tabs.first{
+                                xAxis = reader.frame(in: .global).minX
+                            }
+                        })
+                    }
+                    .frame(width: 25,height: 25)
                     if image != tabs.last{Spacer(minLength: 0)}
                     
                 }
             }
             .padding(.horizontal)
             .padding(.vertical)
+            .background(Color("Lblue").clipShape(CustomShape(xAxis: xAxis)).cornerRadius(12))
+            
+            .padding(.horizontal)
             //Bottom Edge
             .padding(.bottom,UIApplication.shared.windows.first?.safeAreaInsets.bottom)
-            .background(Color.white)
+            
         }
         .ignoresSafeArea(.all,edges: .bottom)
         
@@ -90,3 +111,43 @@ struct TabHome: View {
     }
 }
 var tabs = ["home","add","expen","chart"]
+
+//curve
+struct CustomShape: Shape {
+    
+    var xAxis: CGFloat
+    
+    //Animatig Path....
+    var animatableData: CGFloat{
+        get{return xAxis}
+        set{xAxis = newValue}
+    }
+    
+    
+    func path(in rect: CGRect) -> Path {
+        return Path{path in
+            
+            path.move(to: CGPoint(x: 0, y: 0))
+            path.addLine(to: CGPoint(x: rect.width, y: 0))
+            path.addLine(to: CGPoint(x: rect.width, y: rect.height))
+            path.addLine(to: CGPoint(x: 0, y: rect.height))
+            
+            let center = xAxis
+            path.move(to: CGPoint(x: center - 50, y: 0))
+            
+            let to1 = CGPoint(x: center, y: 35)
+            let conrol1 = CGPoint(x: center - 25, y: 0)
+            let conrol2 = CGPoint(x: center - 25, y: 35)
+            
+            let to2 = CGPoint(x: center + 50, y: 0)
+            let conrol3 = CGPoint(x: center + 25, y: 35)
+            let conrol4 = CGPoint(x: center + 25, y: 0)
+            
+            path.addCurve(to: to1, control1: conrol1, control2: conrol2)
+            path.addCurve(to: to2, control1: conrol3, control2: conrol4)
+            
+            
+            
+        }
+    }
+}

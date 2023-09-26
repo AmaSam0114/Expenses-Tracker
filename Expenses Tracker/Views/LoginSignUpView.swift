@@ -59,7 +59,7 @@ struct HomeScreen : View {
     
     var body: some View{
         VStack{
-            Text("Logged Successfully")
+            TabBarView()
                 .font(.title)
                 .fontWeight(.bold)
                 .foregroundColor(Color.black.opacity(0.7))
