@@ -37,6 +37,10 @@ struct TabHome: View {
                 HomeView()
                     .ignoresSafeArea(.all,edges: .all)
                     .tag("home")
+                CategoryView()
+                    .ignoresSafeArea(.all,edges: .all)
+                    .tag("category")
+                
                 AddExpenseView()
                     .ignoresSafeArea(.all,edges: .all)
                     .tag("add")
@@ -99,6 +103,8 @@ struct TabHome: View {
         switch image{
         case "home":
             return Color("Color")
+        case "category":
+            return Color("Color")
         case "add":
             return Color("Color")
         case "expen":
@@ -110,7 +116,7 @@ struct TabHome: View {
         }
     }
 }
-var tabs = ["home","add","expen","chart"]
+var tabs = ["home","category","add","expen","chart"]
 
 //curve
 struct CustomShape: Shape {

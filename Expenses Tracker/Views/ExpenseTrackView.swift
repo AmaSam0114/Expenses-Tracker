@@ -9,7 +9,10 @@ import SwiftUI
 
 struct ExpenseTrackView: View {
     var body: some View {
-        Text("Expense Tracking")
+        NavigationView{
+            Text("Expense Tracking")
+                .navigationTitle("Expenses")
+        }
     }
 }
 
