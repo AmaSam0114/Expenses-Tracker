@@ -8,83 +8,46 @@
 import SwiftUI
 
 struct CategoryView: View {
-    @State private var isAlertShowing = false
-    @State private var newCategoryName: String = ""
-    @State private var categories: [Category] = [
-    Category(id: 0, name: "Groceries"),
-    Category(id: 1, name: "Transport"),
-    Category(id: 2, name: "Bills")
+    @StateObject var viewModel = CategoryViewModel()
+
+     //   private let gridItemLayout = [GridItem(.flexible(minimum: 100, maximum: 200), spacing: 16)]
+    private let adaptiveColumns = [
+        GridItem(.adaptive(minimum: 170))
     ]
     
     var body: some View {
-        
-        VStack{
-            Text("Categories")
-                
-            List{
-                ForEach(categories){category in
-                    HStack{
-                        
-                        Text(category.name)
-                    }
-                    
-                }
-                
-            }
-            //.scrollContentBackground(.hidden)
-           // Spacer()
-            HStack(spacing: 16){
-                ZStack(alignment: .trailing){
-                    
-                        TextField("Add New Category",text: $newCategoryName)
-                            .textFieldStyle(.roundedBorder)
-                            .padding(.vertical,150)
-                        
-                        
-                        if newCategoryName.count > 0{
-                            Button{
-                                newCategoryName = ""
-                                
-                            }label: {
-                                Label("Clear input",systemImage: "xmark.circle.fill")
-                                    .labelStyle(.iconOnly)
-                                    .foregroundColor(.gray)
-                                    .padding(.trailing,6)
-                            }
-                            .alert("Must Provide Category Name", isPresented:$isAlertShowing){
-                                Button("Ok",role: .cancel){
-                                    isAlertShowing = false
+        NavigationView {
+                    ScrollView {
+                        LazyVGrid(columns: adaptiveColumns, spacing: 16) {
+                            ForEach(viewModel.categories) { category in
+                                NavigationLink(destination: Text(category.name)) {
+                                    //CategoryCardView(category: category)
+                                    VStack {
+                                                Image(category.imageName)
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .frame(height: 100)
+                                                    .cornerRadius(10)
+
+                                                Text(category.name)
+                                                    .font(.headline)
+                                                    .padding(.top, 4)
+                                            }
+                                            .padding(8)
+                                            .background(Color.white)
+                                            .cornerRadius(10)
+                                            .shadow(radius: 5)
                                 }
                             }
                         }
-                        
+                        .padding()
                     }
-                
-                Button{
-                    
-                    if newCategoryName.count > 0{
-                        categories.append(Category(id: categories.count, name: newCategoryName))
-                        newCategoryName = ""
-                    }else{
-                        isAlertShowing = true
-                        
-                    }
-                    
-                }label: {
-                    Label("Submit",systemImage: "paperplane.fill")
-                        .labelStyle(.iconOnly )
-                        .padding(.top,6)
+                    .navigationTitle("Categories")
                 }
-                
-                .padding(.top,6)
             }
-            .padding(.horizontal,16)
-            
-        }
-        
         
     }
-}
+
 
 struct CategoryView_Previews: PreviewProvider {
     static var previews: some View {
