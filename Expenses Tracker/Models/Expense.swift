@@ -6,12 +6,15 @@
 //
 
 import Foundation
+import SwiftData
 
-struct Expense: Identifiable{
+struct Expense{
     let id = UUID()
     let name: String
     let category: CategoryViewModel
     let amount: String
     let description: String
     let date: Date
+    
+    init
 }

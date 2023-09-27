@@ -11,6 +11,8 @@
 		1B125C542AC4B95200558328 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B125C532AC4B95200558328 /* Expense.swift */; };
 		1B125C582AC4BEC000558328 /* AddExpense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B125C572AC4BEC000558328 /* AddExpense.swift */; };
 		1B125C5A2AC4CD5900558328 /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B125C592AC4CD5900558328 /* AddExpenseView.swift */; };
+		1B125C5F2AC4E65000558328 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1B125C5E2AC4E65000558328 /* Realm */; };
+		1B125C612AC4E65000558328 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1B125C602AC4E65000558328 /* RealmSwift */; };
 		1B2B37452AC169EA0039A0EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B2B37442AC169EA0039A0EA /* GoogleService-Info.plist */; };
 		1B2B37482AC16A8A0039A0EA /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1B2B37472AC16A8A0039A0EA /* FirebaseAnalytics */; };
 		1B2B374A2AC16A8A0039A0EA /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 1B2B37492AC16A8A0039A0EA /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -109,6 +111,7 @@
 				1B2B37482AC16A8A0039A0EA /* FirebaseAnalytics in Frameworks */,
 				1B2B374A2AC16A8A0039A0EA /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				1B2B37702AC16A8A0039A0EA /* FirebaseMLModelDownloader in Frameworks */,
+				1B125C612AC4E65000558328 /* RealmSwift in Frameworks */,
 				1B2B37642AC16A8A0039A0EA /* FirebaseFirestoreSwift in Frameworks */,
 				1B2B37502AC16A8A0039A0EA /* FirebaseAppCheck in Frameworks */,
 				1B2B374E2AC16A8A0039A0EA /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
@@ -116,6 +119,7 @@
 				1B2B37582AC16A8A0039A0EA /* FirebaseCrashlytics in Frameworks */,
 				1B2B37782AC16A8A0039A0EA /* FirebaseRemoteConfigSwift in Frameworks */,
 				1B2B376A2AC16A8A0039A0EA /* FirebaseInAppMessaging-Beta in Frameworks */,
+				1B125C5F2AC4E65000558328 /* Realm in Frameworks */,
 				1B2B375C2AC16A8A0039A0EA /* FirebaseDatabaseSwift in Frameworks */,
 				1B2B37662AC16A8A0039A0EA /* FirebaseFunctions in Frameworks */,
 				1B2B377C2AC16A8A0039A0EA /* FirebaseStorageCombine-Community in Frameworks */,
@@ -285,6 +289,8 @@
 				1B2B37772AC16A8A0039A0EA /* FirebaseRemoteConfigSwift */,
 				1B2B37792AC16A8A0039A0EA /* FirebaseStorage */,
 				1B2B377B2AC16A8A0039A0EA /* FirebaseStorageCombine-Community */,
+				1B125C5E2AC4E65000558328 /* Realm */,
+				1B125C602AC4E65000558328 /* RealmSwift */,
 			);
 			productName = "Expenses Tracker";
 			productReference = 1B60BC0E2AB07D8C001D97A3 /* Expenses Tracker.app */;
@@ -360,6 +366,7 @@
 			mainGroup = 1B60BC052AB07D8C001D97A3;
 			packageReferences = (
 				1B2B37462AC16A8A0039A0EA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				1B125C5D2AC4E65000558328 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
 			productRefGroup = 1B60BC0F2AB07D8C001D97A3 /* Products */;
 			projectDirPath = "";
@@ -737,6 +744,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1B125C5D2AC4E65000558328 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		1B2B37462AC16A8A0039A0EA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -748,6 +763,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1B125C5E2AC4E65000558328 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B125C5D2AC4E65000558328 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		1B125C602AC4E65000558328 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B125C5D2AC4E65000558328 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
 		1B2B37472AC16A8A0039A0EA /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 1B2B37462AC16A8A0039A0EA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
