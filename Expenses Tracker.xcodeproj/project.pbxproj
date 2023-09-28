@@ -19,6 +19,7 @@
 		1B125C702AC5B27E00558328 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 1B125C6F2AC5B27E00558328 /* SwiftUICharts */; };
 		1B125C742AC5D0A600558328 /* FinancialOverviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B125C732AC5D0A600558328 /* FinancialOverviewModel.swift */; };
 		1B125C762AC5D13000558328 /* ExpenseServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B125C752AC5D13000558328 /* ExpenseServiceModel.swift */; };
+		1B125C782AC5D3D800558328 /* FinancialDataServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B125C772AC5D3D700558328 /* FinancialDataServiceModel.swift */; };
 		1B2B37452AC169EA0039A0EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B2B37442AC169EA0039A0EA /* GoogleService-Info.plist */; };
 		1B2B37482AC16A8A0039A0EA /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1B2B37472AC16A8A0039A0EA /* FirebaseAnalytics */; };
 		1B2B374A2AC16A8A0039A0EA /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 1B2B37492AC16A8A0039A0EA /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -90,6 +91,7 @@
 		1B125C6C2AC5B03300558328 /* Saving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Saving.swift; sourceTree = "<group>"; };
 		1B125C732AC5D0A600558328 /* FinancialOverviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialOverviewModel.swift; sourceTree = "<group>"; };
 		1B125C752AC5D13000558328 /* ExpenseServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseServiceModel.swift; sourceTree = "<group>"; };
+		1B125C772AC5D3D700558328 /* FinancialDataServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDataServiceModel.swift; sourceTree = "<group>"; };
 		1B2B37442AC169EA0039A0EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1B2B377F2AC177BB0039A0EA /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		1B2B37812AC1A4A90039A0EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				1B125C6C2AC5B03300558328 /* Saving.swift */,
 				1B125C732AC5D0A600558328 /* FinancialOverviewModel.swift */,
 				1B125C752AC5D13000558328 /* ExpenseServiceModel.swift */,
+				1B125C772AC5D3D700558328 /* FinancialDataServiceModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				1B60BC142AB07D8C001D97A3 /* LoginSignUpView.swift in Sources */,
 				1B6C9F322AC38A72001469E0 /* Category.swift in Sources */,
 				1B125C692AC5A9CE00558328 /* TransactionModel.swift in Sources */,
+				1B125C782AC5D3D800558328 /* FinancialDataServiceModel.swift in Sources */,
 				1B6C9F2C2AC35088001469E0 /* ExpenseTrackView.swift in Sources */,
 				1B125C502AC4AAAB00558328 /* CategoryViewModel.swift in Sources */,
 				1B2B37802AC177BB0039A0EA /* TabBarView.swift in Sources */,

@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
-
-struct FinancialOverview {
+struct FinancialOverview:Codable,Identifiable {
+    @DocumentID var id: String?
     var income: Double
     var expenses: Double
     var savings: Double {
