@@ -6,18 +6,21 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct AddExpenseView: View {
     
     @State private var expenseName = ""
     @State private var expenseAmount = ""
     @State private var expensedescription = ""
+    @State private var category = ""
     @State private var expenseDate = Date()
     @State private var selectedCategory = "Select category"
     
     //@EnvironmentObject var expenseCategory: CategoryViewModel
     let expenseCategories = ["Groceries", "Transport", "Food", "Medical and Healthcare", "Bill","Other"]
-    
+  //  let singleString : String = expenseCategories
+   // let singleString = expenseCategories.joined(separator: ",")
     var body: some View {
         NavigationView {
             List{
@@ -66,6 +69,8 @@ struct AddExpenseView: View {
                 HStack{
                     Button(action: {
                         // Add your code to save the expense here
+                        addExpenseToFirebase()
+                        
                     }) {
                         Text("Add")
                             .frame(maxWidth: .infinity, alignment: .center)
@@ -80,9 +85,31 @@ struct AddExpenseView: View {
         
     }
     
+    
+    func addExpenseToFirebase(){
+        let expense = Expense(
+            name: expenseName,
+            category: category,
+            amount: Double(expenseAmount) ?? 0.0,
+            description: expensedescription,
+            date: expenseDate
+           
+            
+        )
+        
+        let db = Firestore.firestore()
+        var ref: DocumentReference? = nil
+        ref = db.collection("expenses").addDocument(data: expense.documentData) { error in
+            if let error = error {
+                print("Error adding document: \(error)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+                
+            }
+        }
+    }
 }
     
-
 
     struct AddExpenseView_Previews: PreviewProvider {
         static var previews: some View {

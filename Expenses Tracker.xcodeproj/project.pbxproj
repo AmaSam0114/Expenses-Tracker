@@ -13,6 +13,12 @@
 		1B125C5A2AC4CD5900558328 /* AddExpenseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B125C592AC4CD5900558328 /* AddExpenseView.swift */; };
 		1B125C5F2AC4E65000558328 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 1B125C5E2AC4E65000558328 /* Realm */; };
 		1B125C612AC4E65000558328 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1B125C602AC4E65000558328 /* RealmSwift */; };
+		1B125C692AC5A9CE00558328 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B125C682AC5A9CE00558328 /* TransactionModel.swift */; };
+		1B125C6B2AC5AFE300558328 /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B125C6A2AC5AFE300558328 /* Income.swift */; };
+		1B125C6D2AC5B03300558328 /* Saving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B125C6C2AC5B03300558328 /* Saving.swift */; };
+		1B125C702AC5B27E00558328 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 1B125C6F2AC5B27E00558328 /* SwiftUICharts */; };
+		1B125C722AC5CD0900558328 /* ExpenseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B125C712AC5CD0900558328 /* ExpenseService.swift */; };
+		1B125C742AC5D0A600558328 /* FinancialOverviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B125C732AC5D0A600558328 /* FinancialOverviewModel.swift */; };
 		1B2B37452AC169EA0039A0EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B2B37442AC169EA0039A0EA /* GoogleService-Info.plist */; };
 		1B2B37482AC16A8A0039A0EA /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1B2B37472AC16A8A0039A0EA /* FirebaseAnalytics */; };
 		1B2B374A2AC16A8A0039A0EA /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 1B2B37492AC16A8A0039A0EA /* FirebaseAnalyticsOnDeviceConversion */; };
@@ -79,6 +85,11 @@
 		1B125C532AC4B95200558328 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		1B125C572AC4BEC000558328 /* AddExpense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpense.swift; sourceTree = "<group>"; };
 		1B125C592AC4CD5900558328 /* AddExpenseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseView.swift; sourceTree = "<group>"; };
+		1B125C682AC5A9CE00558328 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
+		1B125C6A2AC5AFE300558328 /* Income.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
+		1B125C6C2AC5B03300558328 /* Saving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Saving.swift; sourceTree = "<group>"; };
+		1B125C712AC5CD0900558328 /* ExpenseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseService.swift; sourceTree = "<group>"; };
+		1B125C732AC5D0A600558328 /* FinancialOverviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialOverviewModel.swift; sourceTree = "<group>"; };
 		1B2B37442AC169EA0039A0EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1B2B377F2AC177BB0039A0EA /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		1B2B37812AC1A4A90039A0EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -113,6 +124,7 @@
 				1B2B37702AC16A8A0039A0EA /* FirebaseMLModelDownloader in Frameworks */,
 				1B125C612AC4E65000558328 /* RealmSwift in Frameworks */,
 				1B2B37642AC16A8A0039A0EA /* FirebaseFirestoreSwift in Frameworks */,
+				1B125C702AC5B27E00558328 /* SwiftUICharts in Frameworks */,
 				1B2B37502AC16A8A0039A0EA /* FirebaseAppCheck in Frameworks */,
 				1B2B374E2AC16A8A0039A0EA /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				1B2B37542AC16A8A0039A0EA /* FirebaseAuth in Frameworks */,
@@ -249,6 +261,11 @@
 				1B6C9F312AC38A72001469E0 /* Category.swift */,
 				1B125C532AC4B95200558328 /* Expense.swift */,
 				1B125C572AC4BEC000558328 /* AddExpense.swift */,
+				1B125C682AC5A9CE00558328 /* TransactionModel.swift */,
+				1B125C6A2AC5AFE300558328 /* Income.swift */,
+				1B125C6C2AC5B03300558328 /* Saving.swift */,
+				1B125C712AC5CD0900558328 /* ExpenseService.swift */,
+				1B125C732AC5D0A600558328 /* FinancialOverviewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -299,6 +316,7 @@
 				1B2B377B2AC16A8A0039A0EA /* FirebaseStorageCombine-Community */,
 				1B125C5E2AC4E65000558328 /* Realm */,
 				1B125C602AC4E65000558328 /* RealmSwift */,
+				1B125C6F2AC5B27E00558328 /* SwiftUICharts */,
 			);
 			productName = "Expenses Tracker";
 			productReference = 1B60BC0E2AB07D8C001D97A3 /* Expenses Tracker.app */;
@@ -375,6 +393,7 @@
 			packageReferences = (
 				1B2B37462AC16A8A0039A0EA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				1B125C5D2AC4E65000558328 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				1B125C6E2AC5B27E00558328 /* XCRemoteSwiftPackageReference "SwiftUICharts" */,
 			);
 			productRefGroup = 1B60BC0F2AB07D8C001D97A3 /* Products */;
 			projectDirPath = "";
@@ -421,8 +440,11 @@
 			files = (
 				1B125C5A2AC4CD5900558328 /* AddExpenseView.swift in Sources */,
 				1B125C542AC4B95200558328 /* Expense.swift in Sources */,
+				1B125C742AC5D0A600558328 /* FinancialOverviewModel.swift in Sources */,
 				1B60BC142AB07D8C001D97A3 /* LoginSignUpView.swift in Sources */,
 				1B6C9F322AC38A72001469E0 /* Category.swift in Sources */,
+				1B125C722AC5CD0900558328 /* ExpenseService.swift in Sources */,
+				1B125C692AC5A9CE00558328 /* TransactionModel.swift in Sources */,
 				1B6C9F2C2AC35088001469E0 /* ExpenseTrackView.swift in Sources */,
 				1B125C502AC4AAAB00558328 /* CategoryViewModel.swift in Sources */,
 				1B2B37802AC177BB0039A0EA /* TabBarView.swift in Sources */,
@@ -431,7 +453,9 @@
 				1B2B37842AC1AD3D0039A0EA /* HomeView.swift in Sources */,
 				1B125C582AC4BEC000558328 /* AddExpense.swift in Sources */,
 				1B60BC122AB07D8C001D97A3 /* Expenses_TrackerApp.swift in Sources */,
+				1B125C6B2AC5AFE300558328 /* Income.swift in Sources */,
 				1B6C9F2F2AC37120001469E0 /* CategoryView.swift in Sources */,
+				1B125C6D2AC5B03300558328 /* Saving.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -760,6 +784,14 @@
 				kind = branch;
 			};
 		};
+		1B125C6E2AC5B27E00558328 /* XCRemoteSwiftPackageReference "SwiftUICharts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/willdale/SwiftUICharts.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		1B2B37462AC16A8A0039A0EA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -780,6 +812,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 1B125C5D2AC4E65000558328 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
+		};
+		1B125C6F2AC5B27E00558328 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1B125C6E2AC5B27E00558328 /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
+			productName = SwiftUICharts;
 		};
 		1B2B37472AC16A8A0039A0EA /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

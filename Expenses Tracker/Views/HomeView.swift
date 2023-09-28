@@ -6,13 +6,18 @@
 //
 
 import SwiftUI
+import SwiftUICharts
 
 struct HomeView: View {
+    
+    
+  
+    
+    
     var body: some View {
-        Text("Home")
-            .foregroundColor(Color.green)
-            
        
+        
+        Text("Home")
     }
 }
 
