@@ -7,8 +7,12 @@
 
 import Foundation
 
-struct Category: Codable,Hashable,Identifiable{
-    var id : Int
+struct Category: Identifiable{
+    var id: String {
+            self.name
+        }
+  //  let id = UUID()
     var name : String
+   var imageName:String
    // var color: Color
 }

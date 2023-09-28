@@ -9,57 +9,81 @@ import SwiftUI
 
 struct AddExpenseView: View {
     
-    @EnvironmentObject var expenseManager: ExpenseManager
     @State private var expenseName = ""
-    @EnvironmentObject var expenseCategory: CategoryViewModel
     @State private var expenseAmount = ""
-    @State private var expenseCescription = ""
-    @State private var selectedDate = Date()
+    @State private var expensedescription = ""
+    @State private var expenseDate = Date()
+    @State private var selectedCategory = "Select category"
     
-    
+    //@EnvironmentObject var expenseCategory: CategoryViewModel
+    let expenseCategories = ["Groceries", "Transport", "Food", "Medical and Healthcare", "Bill","Other"]
     
     var body: some View {
-        VStack{
+        NavigationView {
             List{
                 
-                TextField("Expense Name", text: $expenseName)
-                
-              //  Picker("Select Category", selection: $expenseCategory)
-                
-                TextField("Amount", text: $expenseAmount)
-                    .keyboardType(.numberPad)
-                TextField("Description", text: $expenseCescription)
-                
-                DatePicker("Date", selection: $selectedDate, displayedComponents: .date)
-                
-                
-                
-                Button(action: {
+                HStack {
+                    Text("Expense Name:")
+                    Spacer()
+                    TextField("Name", text: $expenseName)
+                        .multilineTextAlignment(.trailing)
+                        .submitLabel(.done)
                     
-                }) {
-                    Text("Add")
-                        .foregroundColor(.blue)
-                        .padding(.vertical)
-                        .frame(width: UIScreen.main.bounds.width - 50)
+                }
+                HStack {
+                    Text("Amount:")
+                    Spacer()
+                    TextField("Amount", text: $expenseAmount)
+                        .multilineTextAlignment(.trailing)
+                        .submitLabel(.done)
+                        .keyboardType(.numberPad)
+                }
+                HStack {
+                    Text("Date")
+                    Spacer()
+                    DatePicker("Expense Date", selection: $expenseDate, displayedComponents: .date)
+                }
+                HStack {
+                    Text("Note")
+                    Spacer()
+                    TextField("Note", text: $expensedescription)
+                        .multilineTextAlignment(.trailing)
+                        .submitLabel(.done)
                 }
                 
+                HStack {
+                    Text("Category")
+                    Spacer()
+                    Picker("Select Category", selection: $selectedCategory) {
+                        ForEach(expenseCategories, id: \.self) { category in
+                            Text(category)
+                        }
+                    }
+                    .pickerStyle(MenuPickerStyle())
+                }
+                
+                
+                HStack{
+                    Button(action: {
+                        // Add your code to save the expense here
+                    }) {
+                        Text("Add")
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .foregroundColor(.blue)
+                    }
+                    .disabled(expenseName.isEmpty || expenseAmount.isEmpty)
+                }
             }
+            
+            
         }
+        
     }
-    func addExpense() {
-                   
-                        let expense = Expense(name: expenseName, category: expenseCategory, amount: expenseAmount, description: expenseCescription, date: selectedDate)
-                        expenseManager.expenses.append(expense)
-                        expenseName = ""
-                    //    expenseCategory.categories.append(expense)
-                        expenseAmount = ""
-                        expenseCescription = ""
-                        selectedDate = Date()
-                    
-                }
-
     
 }
+    
+
+
     struct AddExpenseView_Previews: PreviewProvider {
         static var previews: some View {
             AddExpenseView()

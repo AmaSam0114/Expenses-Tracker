@@ -19,17 +19,17 @@ struct CategoryView: View {
         NavigationView {
                     ScrollView {
                         LazyVGrid(columns: adaptiveColumns, spacing: 16) {
-                            ForEach(viewModel.categories) { category in
-                                NavigationLink(destination: Text(category.name)) {
+                            ForEach(viewModel.categories,id: \.name) { Category in
+                                NavigationLink(destination: Text(Category.name)) {
                                     //CategoryCardView(category: category)
                                     VStack {
-                                                Image(category.imageName)
+                                                Image(Category.imageName)
                                                     .resizable()
                                                     .aspectRatio(contentMode: .fit)
                                                     .frame(height: 100)
                                                     .cornerRadius(10)
 
-                                                Text(category.name)
+                                                Text(Category.name)
                                                     .font(.headline)
                                                     .padding(.top, 4)
                                             }
@@ -54,3 +54,4 @@ struct CategoryView_Previews: PreviewProvider {
         CategoryView()
     }
 }
+

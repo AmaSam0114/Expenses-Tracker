@@ -153,6 +153,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B125C642AC4F37200558328 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1B125C652AC5974F00558328 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				1B125C4F2AC4AAAB00558328 /* CategoryViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		1B2B37852AC1AE760039A0EA /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,8 +206,9 @@
 		1B60BC102AB07D8C001D97A3 /* Expenses Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				1B125C652AC5974F00558328 /* ViewModels */,
+				1B125C642AC4F37200558328 /* Components */,
 				1B6C9F302AC38A13001469E0 /* Models */,
-				1B6C9F2D2AC36958001469E0 /* Components */,
 				1B2B37852AC1AE760039A0EA /* Views */,
 				1B60BC112AB07D8C001D97A3 /* Expenses_TrackerApp.swift */,
 				1B2B37442AC169EA0039A0EA /* GoogleService-Info.plist */,
@@ -227,18 +243,10 @@
 			path = "Expenses TrackerUITests";
 			sourceTree = "<group>";
 		};
-		1B6C9F2D2AC36958001469E0 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		1B6C9F302AC38A13001469E0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				1B6C9F312AC38A72001469E0 /* Category.swift */,
-				1B125C4F2AC4AAAB00558328 /* CategoryViewModel.swift */,
 				1B125C532AC4B95200558328 /* Expense.swift */,
 				1B125C572AC4BEC000558328 /* AddExpense.swift */,
 			);

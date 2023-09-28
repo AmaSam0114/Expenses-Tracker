@@ -6,15 +6,14 @@
 //
 
 import Foundation
-import SwiftData
 
-struct Expense{
-    let id = UUID()
-    let name: String
-    let category: CategoryViewModel
-    let amount: String
-    let description: String
-    let date: Date
+struct Expense: Identifiable{
+    var id = UUID()
+    var name: String
+    var category: CategoryViewModel
+    var amount: String
+    var description: String
+    var date: Date
     
-    init
+    
 }
