@@ -69,7 +69,7 @@ struct AddExpenseView: View {
                 HStack{
                     Button(action: {
                         // Add your code to save the expense here
-                        addExpenseToFirebase()
+                      //  addExpenseToFirebase()
                         
                     }) {
                         Text("Add")
@@ -86,28 +86,29 @@ struct AddExpenseView: View {
     }
     
     
-    func addExpenseToFirebase(){
-        let expense = Expense(
-            name: expenseName,
-            category: category,
-            amount: Double(expenseAmount) ?? 0.0,
-            description: expensedescription,
-            date: expenseDate
-           
-            
-        )
-        
-        let db = Firestore.firestore()
-        var ref: DocumentReference? = nil
-        ref = db.collection("expenses").addDocument(data: expense.documentData) { error in
-            if let error = error {
-                print("Error adding document: \(error)")
-            } else {
-                print("Document added with ID: \(ref!.documentID)")
-                
-            }
-        }
-    }
+//    func addExpenseToFirebase(){
+//        let expense = Expense(
+//            id:,
+//            name: expenseName,
+//            category: category,
+//            amount: Double(expenseAmount) ?? 0.0,
+//            description: expensedescription,
+//            date: expenseDate
+//
+//
+//        )
+//
+//        let db = Firestore.firestore()
+//        var ref: DocumentReference? = nil
+//        ref = db.collection("expenses").addDocument(data: expense.documentData) { error in
+//            if let error = error {
+//                print("Error adding document: \(error)")
+//            } else {
+//                print("Document added with ID: \(ref!.documentID)")
+//
+//            }
+//        }
+//    }
 }
     
 

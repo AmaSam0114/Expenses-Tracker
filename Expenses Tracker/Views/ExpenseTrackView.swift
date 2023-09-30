@@ -6,13 +6,14 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ExpenseTrackView: View {
     
-    @ObservedObject var expenseService = ExpenseService()
+    @ObservedObject var model = ExpenseViewModel()
     var body: some View {
        
-        List(expenseService.expenses) { expense in
+        List(model.list) { expense in
                     VStack(alignment: .leading) {
                         Text(expense.name)
                             .font(.headline)
@@ -24,10 +25,14 @@ struct ExpenseTrackView: View {
                             .font(.subheadline)
                     }
                 }
-                .onAppear {
-                    expenseService.fetchData()
-                }
+
             }
+    
+    init(){
+        model.getData()
+        
+    }
+    
         }
 
         

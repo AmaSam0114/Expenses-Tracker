@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B10B94C2AC7F9EF001975BA /* ExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B10B94B2AC7F9EF001975BA /* ExpenseViewModel.swift */; };
 		1B125C502AC4AAAB00558328 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B125C4F2AC4AAAB00558328 /* CategoryViewModel.swift */; };
 		1B125C542AC4B95200558328 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B125C532AC4B95200558328 /* Expense.swift */; };
 		1B125C582AC4BEC000558328 /* AddExpense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B125C572AC4BEC000558328 /* AddExpense.swift */; };
@@ -18,7 +19,6 @@
 		1B125C6D2AC5B03300558328 /* Saving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B125C6C2AC5B03300558328 /* Saving.swift */; };
 		1B125C702AC5B27E00558328 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 1B125C6F2AC5B27E00558328 /* SwiftUICharts */; };
 		1B125C742AC5D0A600558328 /* FinancialOverviewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B125C732AC5D0A600558328 /* FinancialOverviewModel.swift */; };
-		1B125C762AC5D13000558328 /* ExpenseServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B125C752AC5D13000558328 /* ExpenseServiceModel.swift */; };
 		1B125C782AC5D3D800558328 /* FinancialDataServiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B125C772AC5D3D700558328 /* FinancialDataServiceModel.swift */; };
 		1B2B37452AC169EA0039A0EA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1B2B37442AC169EA0039A0EA /* GoogleService-Info.plist */; };
 		1B2B37482AC16A8A0039A0EA /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1B2B37472AC16A8A0039A0EA /* FirebaseAnalytics */; };
@@ -82,6 +82,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B10B94B2AC7F9EF001975BA /* ExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseViewModel.swift; sourceTree = "<group>"; };
 		1B125C4F2AC4AAAB00558328 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		1B125C532AC4B95200558328 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		1B125C572AC4BEC000558328 /* AddExpense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpense.swift; sourceTree = "<group>"; };
@@ -90,7 +91,6 @@
 		1B125C6A2AC5AFE300558328 /* Income.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
 		1B125C6C2AC5B03300558328 /* Saving.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Saving.swift; sourceTree = "<group>"; };
 		1B125C732AC5D0A600558328 /* FinancialOverviewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialOverviewModel.swift; sourceTree = "<group>"; };
-		1B125C752AC5D13000558328 /* ExpenseServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseServiceModel.swift; sourceTree = "<group>"; };
 		1B125C772AC5D3D700558328 /* FinancialDataServiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinancialDataServiceModel.swift; sourceTree = "<group>"; };
 		1B2B37442AC169EA0039A0EA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1B2B377F2AC177BB0039A0EA /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -167,17 +167,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1B125C642AC4F37200558328 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		1B125C652AC5974F00558328 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				1B125C4F2AC4AAAB00558328 /* CategoryViewModel.swift */,
+				1B10B94B2AC7F9EF001975BA /* ExpenseViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -221,7 +215,6 @@
 			isa = PBXGroup;
 			children = (
 				1B125C652AC5974F00558328 /* ViewModels */,
-				1B125C642AC4F37200558328 /* Components */,
 				1B6C9F302AC38A13001469E0 /* Models */,
 				1B2B37852AC1AE760039A0EA /* Views */,
 				1B60BC112AB07D8C001D97A3 /* Expenses_TrackerApp.swift */,
@@ -267,7 +260,6 @@
 				1B125C6A2AC5AFE300558328 /* Income.swift */,
 				1B125C6C2AC5B03300558328 /* Saving.swift */,
 				1B125C732AC5D0A600558328 /* FinancialOverviewModel.swift */,
-				1B125C752AC5D13000558328 /* ExpenseServiceModel.swift */,
 				1B125C772AC5D3D700558328 /* FinancialDataServiceModel.swift */,
 			);
 			path = Models;
@@ -441,7 +433,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B125C762AC5D13000558328 /* ExpenseServiceModel.swift in Sources */,
 				1B125C5A2AC4CD5900558328 /* AddExpenseView.swift in Sources */,
 				1B125C542AC4B95200558328 /* Expense.swift in Sources */,
 				1B125C742AC5D0A600558328 /* FinancialOverviewModel.swift in Sources */,
@@ -454,6 +445,7 @@
 				1B2B37802AC177BB0039A0EA /* TabBarView.swift in Sources */,
 				1B2B37822AC1A4A90039A0EA /* ContentView.swift in Sources */,
 				1B2B37892AC1B0940039A0EA /* ReportView.swift in Sources */,
+				1B10B94C2AC7F9EF001975BA /* ExpenseViewModel.swift in Sources */,
 				1B2B37842AC1AD3D0039A0EA /* HomeView.swift in Sources */,
 				1B125C582AC4BEC000558328 /* AddExpense.swift in Sources */,
 				1B60BC122AB07D8C001D97A3 /* Expenses_TrackerApp.swift in Sources */,

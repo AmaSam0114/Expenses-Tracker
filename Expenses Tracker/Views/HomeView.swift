@@ -15,15 +15,17 @@ struct HomeView: View {
     var body: some View {
        
         VStack {
-                    if let financialData = financialDataService.financialData {
+if let financialData = financialDataService.financialData {
                         Text("Income: $\(financialData.income)")
                         Text("Expenses: $\(financialData.expenses)")
                         Text("Savings: $\(financialData.savings)")
                         
-                        PieChart(chartData: [
-                            ("Income", financialData.income),
-                            ("Expenses", financialData.expenses)
-                        ])
+//                        PieChart(dataPoints:
+//                            ("Income", financialData.income),
+//                            ("Expenses", financialData.expenses)
+//                        , colors: Color)
+                        
+                        
                         
                         .aspectRatio(1, contentMode: .fit)
                         .padding()
